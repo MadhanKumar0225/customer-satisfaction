@@ -94,14 +94,7 @@ export default function TopicPageView() {
       : null;
 
   const handleOpenConcept = (idx: number) => {
-    setSearchParams(
-      (prev) => {
-        const next = new URLSearchParams(prev);
-        next.set('concept', String(idx + 1));
-        return next;
-      },
-      { replace: false }
-    );
+    navigate(`/${topicSlug}/${pageSlug}/concept/${idx + 1}`);
   };
 
   const handleCloseConcept = () => {
@@ -229,7 +222,7 @@ export default function TopicPageView() {
       </section>
 
       {/* 4. KEY CONCEPTS & OPERATIONAL IMPACTS */}
-      <section className="space-y-4">
+      <section id="core-principles" className="space-y-4 scroll-mt-20">
         <div>
           <span className="text-xs font-semibold uppercase tracking-wider text-blue-600 dark:text-blue-400">
             Core Principles
